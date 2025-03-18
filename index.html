@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1, user-scalable=no">
+    <title>Nunca Más</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagenes/icono_ventana.png">
+</head>
+<body>
+    <script>
+        window.onscroll = function() {
+        let scrollButton = document.getElementById("backToTop");
+        let sticky = document.getElementById("sticky");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollButton.style.display = "block";
+            sticky.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";  
+            sticky.style.display = "none";
+        }
+        if(document.body.scrollTop > window.innerHeight * 0.6 || document.documentElement.scrollTop > window.innerHeight * 0.6){
+            sticky.style.opacity = "1";
+        }else{
+            sticky.style.opacity = "0";
+        }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        function toggleMenu() {
+            var navbar = document.querySelector('.navbar');
+            var overlay = document.querySelector('.overlay');
+            navbar.classList.toggle('open');  
+            overlay.classList.toggle('active');  
+        };
+
+        function showSection(id) {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const selectedSection = document.getElementById(id);
+            selectedSection.classList.add('active');
+        }
+        showSection('home');
+    </script>
+    <button id="backToTop" onclick="scrollToTop()"> <img src="imagenes/up_icono.png" class="up-icon"> </button>
+    <div class="sticky" id="sticky"></div>
+    <header id="header" class="header">
+        <div class="menu container">
+            <div class="hamburger" onclick="toggleMenu()">
+                <img src="imagenes/menu_icon.png" class="menu-icon">
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li> <a href="#home" onclick="showSection('home')"> Inicio </a> </li>
+                    <li> <a href="#sitios_de_memoria" onclick="showSection('sitios_de_memoria')"> Sitios de Memoria </a> </li>
+                    <li> <a href="#realidad_censurada" onclick="showSection('realidad_censurada')"> Realidad Censurada </a> </li>
+                    <!-- el basural  -->
+                    <li> <a href="#manifestaciones" onclick="showSection('manifestaciones')"> Manisfestaciones Artísticas </a> </li>
+                    <!-- música, literatura; CHARLY  -->
+                </ul>
+            </nav>
+            <div class="overlay" onclick="toggleMenu()"></div>
+        </div>
+        <div class="arg_icon-container">
+            <img src="imagenes/arg_icono.png" class="arg_icono img-responsive">
+        </div>
+        <div class="header-content container">
+            <h1> Día Nacional de la Memoria, Verdad y Justicia </h1>
+            <span> 24 de Marzo </span>  
+        </div>
+    </header>
+
+    <div class="contenido">
+        <section id="home" class="home">
+            <div class="home-content container">
+                <h2> ¿Qué se conmemora el 24 de Marzo? </h2> 
+                <p>
+                    texto texto texto texto
+                </p>
+            </div>   
+         </section>
+
+        <section id="sitios_de_memoria" class="sitios_de_memoria">
+            <div class="sitios_de_memoria-content container">
+                <h2> Sitios de Memoria </h2> 
+                <p>
+                    texto texto texto texto
+                </p>
+            </div>   
+        </section>
+
+        <section id="realidad_censurada" class="realidad_censurada">
+            <div class="realidad_censurada-content container">
+                <h2> Realidad Censurada </h2> 
+                <p>
+                    texto texto texto texto
+                </p>
+                <img src="imagenes/el_basural-img.png">
+                <span>"El basural", llamaron los militares al método que permitía que las 
+                    Fuerzas Armadas y de Seguridad secuestraran e hicieran desaparecer 
+                    personas
+                </span>
+            </div>   
+        </section>
+
+        <section id="manifestaciones" class="manifestaciones">
+            <div  class="manifestaciones-content container">
+                <h2> Manifestaciones Artísticas </h2> 
+                <p>
+                    texto texto texto texto            
+                </p>
+                <ul class="manifestaciones-list">
+                    <li> 
+                        <div class="imagenes_manifestaciones">
+                            <img src="imagenes/mafalda_manifestaciones.jpeg">
+                            <img src="imagenes/mafalda2_manifestaciones.jpeg">
+                        </div>
+                        <p>
+                            mini descripción
+                        </p>
+                    </li>
+                    <li>
+                        <div class="imagenes_manifestaciones">
+                            <img src="">
+                        </div>
+                        <p>
+                            mini descripción
+                        </p>
+                    </li>
+                    <li>
+                        <div class="imagenes_manifestaciones">
+                            <img src="">
+                        </div>
+                        <p>
+                            mini descripción
+                        </p>
+                    </li>
+                    <li>
+                        <div class="imagenes_manifestaciones">
+                            <img src="">
+                        </div>
+                        <p>
+                            mini descripción
+                        </p>
+                    </li>
+                </ul>
+            </div>   
+        </section>
+    </div>
+
+    <div class="footer">
+        <img>
+        <div id="footer" class="footer-content container">
+            <h2>Santino Genaro Gentille - Facundo Gabriel Navarro</h2>
+            <p>
+                Instituto Marcelo Torcuato de Alvear - 3°B Nivel Secundario
+            </p>
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

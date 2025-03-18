@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    padding: 10px;
+}
+
+.header{
+    position: relative;
+    background-image: linear-gradient(
+        rgba(37, 36, 36, 0.7),
+        rgba(37, 36, 36, 0.7)), 
+        url(imagenes/fondo_home.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    width: 100%;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.arg_icon-container{
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end; 
+    text-align: right;
+    width: 100%;
+    margin-left: -25px;
+}
+.arg_icono{
+    width: 40px;
+    height: auto;
+    margin-left: 25px;
+    margin-top: 20px;
+    filter: brightness(90%)
+}
+
+.header-content{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+}
+.header-content h1{
+    font-size: 60px;
+    line-height: 40px;
+    color: #F9FAFC;
+    width: 360px;
+    margin-top: 240px;
+    text-align: left;
+    font-family: 'Big Shoulders Stencil', sans-serif;
+}
+
+.header-content span{
+    font-size: 20px;
+    font-weight: 600;
+    color: #F9FAFC;
+    margin-bottom: 25px;
+    margin-bottom: 15px;
+}
+
+.icono {
+    width: 25px;  
+    height: auto;
+}
+
+.footer-content {
+    background-color: #b63e48; 
+    padding: 50px 0; 
+    color: white; 
+    text-align: center; 
+    display: flex;
+    flex-direction: column; 
+}
+
+.footer h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-family: 'Big Shoulders Stencil', sans-serif;
+}
+
+.footer p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.up-icon{
+    filter: invert(100%) brightness(100%);
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+#backToTop {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #6f060e;
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px;
+    padding: 0; 
+    font-size: 18px; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+    z-index: 9999;
+    -webkit-tap-highlight-color: transparent;
+}
+#backToTop:hover {
+    background-color: #830610;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+}
+
+#sticky{
+    display: none;
+}
+.menu {
+    flex-direction: column;
+    text-align: center;
+}
+.menu .navbar ul {
+    padding: 0;
+}
+.header-content h1 {
+    font-size: 2em; 
+    margin-bottom: 20px;
+}
+
+.hamburger {
+    display: flex;
+}
+    
+.hamburger img {
+    width: 30px; 
+    height: auto;
+    position: fixed;
+    top: 20px;
+    left: 20px; 
+    z-index: 10; 
+    cursor: pointer;
+    filter: invert(100%);
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    width: 250px;
+    height: 100%;
+    background-color: #a50512;
+    transition: left 0.3s ease;
+    z-index: 9; 
+    padding-top: 60px;
+}
+    
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}   
+.navbar ul li {
+    padding: 20px;
+    text-align: left;
+}   
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+} 
+.navbar.open {
+    left: 0;
+}   
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+    z-index: 8;  
+}
+.overlay.active {
+    display: block;
+}
+.sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    display: block;
+    background-color: #a50512;
+    z-index: 8;
+    transition: opacity 0.3s ease-in-out;
+}
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.home-content h1{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.sitios_de_memoria-content{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.sitios_de_memoria-content h1{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.realidad_censurada-content{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.realidad_censurada-content h1{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.realidad_censurada-content p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.realidad_censurada-content span{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.manifestaciones-content{
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: center;
+}
+
+.manifestaciones-content h1{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.manifestaciones-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 20px; 
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .manifestaciones-list {
+        grid-template-columns: repeat(1, 1fr); 
+    } 
+    .realidad_censurada-content img{
+        width: 80%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .manifestaciones-list {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .realidad_censurada-content img{
+        width: 480px;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+.manifestaciones-list li {
+    background-color: white; 
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    cursor: pointer;
+    min-height: 250px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: height 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.manifestaciones-list li:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); 
+}
+
+.imagenes_manifestaciones {
+    width: auto; 
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imagenes_manifestaciones img{
+    width: 240px; 
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.manifestaciones-list p {
+    font-size: 15px;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 0 auto; 
+    padding: 20px;
+    text-align: justify;
+    overflow: hidden;
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Máximo 5 líneas visibles */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    max-height: 6em; 
+    transition: max-height 0.3s ease-in-out;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
