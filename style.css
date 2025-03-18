@@ -382,7 +382,6 @@ html {
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
-    touch-action: manipulation;
     z-index: 1;
 }
 
@@ -421,7 +420,6 @@ section.active {
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    touch-action: none;
 }
 
 .lightbox img {
