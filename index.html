@@ -39,6 +39,8 @@
 
         function showSection(id) {
             const sections = document.querySelectorAll('section');
+            const navbar = document.querySelector('.navbar');
+            const overlay = document.querySelector('.overlay');
             
             sections.forEach(section => {
                 section.classList.remove('active');
@@ -46,8 +48,26 @@
 
             const selectedSection = document.getElementById(id);
             selectedSection.classList.add('active');
+            if (navbar.classList.contains('open')) {
+                navbar.classList.remove('open');
+                overlay.classList.remove('active'); 
+            }
         }
-        showSection('home');
+        window.onload = function () {
+            showSection('home'); 
+        };
+        
+        function openLightbox(imgSrc) {
+            document.getElementById("lightbox-img").src = imgSrc;
+            document.getElementById("lightbox").style.display = "flex";
+
+            document.body.classList.add("lightbox-open");
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+            document.body.classList.remove("lightbox-open");
+        }
     </script>
     <button id="backToTop" onclick="scrollToTop()"> <img src="imagenes/up_icono.png" class="up-icon"> </button>
     <div class="sticky" id="sticky"></div>
@@ -78,6 +98,10 @@
     </header>
 
     <div class="contenido">
+        <div id="lightbox" class="lightbox">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="Imagen ampliada">
+        </div>
         <section id="home" class="home">
             <div class="home-content container">
                 <h2> ¿Qué se conmemora el 24 de Marzo? </h2> 
@@ -119,8 +143,8 @@
                 <ul class="manifestaciones-list">
                     <li> 
                         <div class="imagenes_manifestaciones">
-                            <img src="imagenes/mafalda_manifestaciones.jpeg">
-                            <img src="imagenes/mafalda2_manifestaciones.jpeg">
+                            <img src="imagenes/mafalda_manifestaciones.jpeg" onclick="openLightbox(this.src)">
+                            <img src="imagenes/mafalda2_manifestaciones.jpeg" onclick="openLightbox(this.src)">
                         </div>
                         <p>
                             mini descripción
@@ -128,7 +152,16 @@
                     </li>
                     <li>
                         <div class="imagenes_manifestaciones">
-                            <img src="">
+                            <img src="imagenes/charly_manifestaciones.jpeg" onclick="openLightbox(this.src)">
+                        </div>
+                        <p>
+                            Un disco marcado por la época, el espanto y la desolación, que
+                            relata el infierno reciente y abrazar una esperanza en tiempos convulsionados.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="imagenes_manifestaciones">
+                            <img src="" onclick="openLightbox(this.src)">
                         </div>
                         <p>
                             mini descripción
@@ -136,15 +169,7 @@
                     </li>
                     <li>
                         <div class="imagenes_manifestaciones">
-                            <img src="">
-                        </div>
-                        <p>
-                            mini descripción
-                        </p>
-                    </li>
-                    <li>
-                        <div class="imagenes_manifestaciones">
-                            <img src="">
+                            <img src="" onclick="openLightbox(this.src)">
                         </div>
                         <p>
                             mini descripción
