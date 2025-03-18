@@ -6,6 +6,8 @@
     <title>Nunca Más</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="imagenes/icono_ventana.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
     <script>
@@ -39,15 +41,26 @@
 
         function showSection(id) {
             const sections = document.querySelectorAll('section');
-            const navbar = document.querySelector('.navbar');
-            const overlay = document.querySelector('.overlay');
-            
+            const navbarLinks = document.querySelectorAll('.navbar ul li'); // Seleccionamos todos los enlaces del menú
+
+            // Primero, eliminamos la clase 'active' de todos los enlaces
+            navbarLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            const selectedLink = document.querySelector(`.navbar ul li a[href="#${id}"]`).parentElement;
+            selectedLink.classList.add('active');
+
+            // Ahora, mostramos la sección correspondiente
             sections.forEach(section => {
                 section.classList.remove('active');
             });
-
             const selectedSection = document.getElementById(id);
             selectedSection.classList.add('active');
+            
+            // Cerrar el menú si está abierto
+            const navbar = document.querySelector('.navbar');
+            const overlay = document.querySelector('.overlay');
             if (navbar.classList.contains('open')) {
                 navbar.classList.remove('open');
                 overlay.classList.remove('active'); 
@@ -79,12 +92,10 @@
             </div>
             <nav class="navbar">
                 <ul>
-                    <li> <a href="#home" onclick="showSection('home')"> Inicio </a> </li>
-                    <li> <a href="#sitios_de_memoria" onclick="showSection('sitios_de_memoria')"> Sitios de Memoria </a> </li>
-                    <li> <a href="#realidad_censurada" onclick="showSection('realidad_censurada')"> Realidad Censurada </a> </li>
-                    <!-- el basural  -->
-                    <li> <a href="#manifestaciones" onclick="showSection('manifestaciones')"> Manisfestaciones Artísticas </a> </li>
-                    <!-- música, literatura; CHARLY  -->
+                    <li> <a class="menu-item" href="#home" onclick="showSection('home')"> Inicio </a> </li>
+                    <li> <a class="menu-item" href="#sitios_de_memoria" onclick="showSection('sitios_de_memoria')"> Sitios de Memoria </a> </li>
+                    <li> <a class="menu-item" href="#realidad_censurada" onclick="showSection('realidad_censurada')"> Realidad Censurada </a> </li>
+                    <li> <a class="menu-item" href="#manifestaciones" onclick="showSection('manifestaciones')"> Manisfestaciones Artísticas </a> </li>
                 </ul>
             </nav>
             <div class="overlay" onclick="toggleMenu()"></div>
@@ -118,6 +129,31 @@
                 <p>
                     texto texto texto texto
                 </p>
+                <div id="map" style="height: 380px; width: 80%;" ></div>
+                <script>
+                    // Inicializar el mapa
+                    var map = L.map('map').setView([-34.6037, -58.3816], 13);
+            
+                    // Agregar capa de mapa (OpenStreetMap)
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors, © CartoDB',
+                        maxZoom: 19,
+                        tileSize: 512,  // Asegurándote de que los tiles sean del tamaño adecuado
+                        zoomOffset: -1
+                    }).addTo(map);
+                    // Cargar el archivo JSON con las ubicaciones
+                    fetch('sitios_de_memoria.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            data.forEach(sitio => {
+                                // Crear un marcador para cada sitio de memoria
+                                var marker = L.marker([sitio.latitud, sitio.longitud]).addTo(map);
+                                marker.bindPopup(`<b>${sitio.nombre}</b>`);
+                            });
+                            map.invalidateSize();
+                        })
+                        .catch(error => console.log('Error cargando el archivo JSON:', error));
+                </script>
             </div>   
         </section>
 
@@ -177,6 +213,7 @@
                         <p>
                             “Periodistas, trabajadores de prensa y gráficos desaparecidos: una lista en construcción” 
                             Pasados 43 años del golpe cívico militar, el número de víctimas llega a 228.
+                        </p>
                     </li>
                 </ul>
             </div>   

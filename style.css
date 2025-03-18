@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600;700;800&display=swap');
 
 *{
     margin: 0;
@@ -13,6 +14,10 @@ body{
 }
 html {
     scroll-behavior: smooth;
+}
+
+p{
+    font-family: 'Merriweather', sans-serif;
 }
 
 .container{
@@ -96,6 +101,7 @@ html {
 
 .footer-content {
     background-color: #b63e48; 
+    /*background-color: #f07b47;*/
     padding: 50px 0; 
     color: white; 
     text-align: center; 
@@ -211,6 +217,11 @@ html {
 .navbar.open {
     left: 0;
 }   
+.navbar ul li.active {
+    background-color: #c7222f; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    font-weight: bold; 
+}
 .overlay {
     position: fixed;
     top: 0;
@@ -269,6 +280,13 @@ html {
     font-weight: 400;
 }
 
+#map {
+    background-color: #eee;  /* Color de fondo para asegurarte de que el mapa se ve */
+    display: block;
+    margin-left: 10%;
+    z-index: 6;
+}
+
 .realidad_censurada-content{
     display: flex;
     flex-direction: column; 
@@ -312,7 +330,7 @@ html {
     font-weight: 400;
 }
 
-.manifestaciones-list {
+.manifestaciones-list{
     display: grid;
     grid-template-columns: repeat(1, 1fr); 
     gap: 20px; 
@@ -397,7 +415,7 @@ html {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    max-height: 6em; 
+    max-height: 8em; 
     transition: max-height 0.3s ease-in-out;
 }
 
