@@ -475,7 +475,7 @@ p{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    max-height: 12em; 
+    max-height: auto; 
     transition: max-height 0.3s ease-in-out;
 }
 
