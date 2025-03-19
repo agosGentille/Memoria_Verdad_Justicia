@@ -273,9 +273,26 @@ p{
     margin-left: 20px;
 }
 
-.home-content h1{
-    font-size: 24px;
+.home-content h2{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.home-content span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    margin-bottom: 15px;
+    max-width: 92%;
+}
+
+.home-content p{
+    font-size: 16px;
     font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 15px;
+    max-width: 92%;
 }
 
 .sitios_de_memoria-content{
@@ -288,9 +305,18 @@ p{
     margin-left: 20px;
 }
 
-.sitios_de_memoria-content h1{
-    font-size: 24px;
+.sitios_de_memoria-content h2{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.sitios_de_memoria-content p{
+    font-size: 16px;
     font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 15px;
+    max-width: 92%;
 }
 
 #map {
@@ -310,19 +336,32 @@ p{
     margin-left: 20px;
 }
 
-.realidad_censurada-content h1{
-    font-size: 24px;
-    font-weight: 400;
+.realidad_censurada-content h2{
+    font-size: 28px;
+    font-weight: 500;
 }
 
 .realidad_censurada-content p{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    max-width: 92%;
+}
+
+.realidad_censurada-content img{
+    width: 60%;
+    height: auto;
+    align-content: center;
+    margin-top: 15px;
 }
 
 .realidad_censurada-content span{
     font-size: 16px;
     font-weight: 400;
+    margin-bottom: 15px;
+    max-width: 70%;
 }
 
 .manifestaciones-content{
@@ -338,9 +377,17 @@ p{
     justify-content: center;
 }
 
-.manifestaciones-content h1{
-    font-size: 24px;
+.manifestaciones-content h2{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.manifestaciones-content p{
+    font-size: 16px;
     font-weight: 400;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 35px;
 }
 
 .manifestaciones-list{
@@ -428,7 +475,7 @@ p{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    max-height: 8em; 
+    max-height: 12em; 
     transition: max-height 0.3s ease-in-out;
 }
 

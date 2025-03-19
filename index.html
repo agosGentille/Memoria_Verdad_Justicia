@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1, user-scalable=no">
-    <title>Nunca Más</title>
+    <title>Tp Contrucción de la Ciudadanía</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="imagenes/icono_ventana.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-<!-- JavaScript de Leaflet -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<!-- CSS y JS de MarkerCluster (para agrupar marcadores) -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
-<script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 </head>
 <body>
     <script>
@@ -133,8 +129,61 @@
             <div class="home-content container">
                 <h2> ¿Qué se conmemora el 24 de Marzo? </h2> 
                 <p>
-                    texto texto texto texto
+                    El 24 de Marzo en Argentina es un día muy importante porque se conmemora el Día Nacional de
+                    la Memoria por la Verdad y la Justicia. Este día se recuerda a las víctimas de la Dictadura 
+                    Cívico-Militar que gobernó el país entre 1976 y 1983. Durante ese tiempo, muchas personas 
+                    sufrieron injusticias, fueron perseguidas, detenidas y hasta desaparecidas por pensar distinto 
+                    o luchar por sus derechos. El 24 de Marzo es un día para recordar lo que pasó y para decir 
+                    "Nunca Más" a que algo así vuelva a ocurrir.
                 </p>
+                <h2> ¿Qué fue la Dictadura Cívico-Militar en Argentina? </h2>
+                <p>
+                    La dictadura cívico-militar en Argentina fue un período oscuro de la historia del país que 
+                    comenzó el 24 de marzo de 1976 y se extendió hasta 1983. Durante estos años, las Fuerzas 
+                    Armadas, con el apoyo de sectores civiles (por esto mismo se le llama Dicadura Cívico-Militar), tomaron el poder mediante un golpe de Estado, 
+                    derrocando al gobierno constitucional de Isabel Perón. Este régimen se autodenominó "Proceso 
+                    de Reorganización Nacional", pero en realidad fue una dictadura que violó sistemáticamente 
+                    los derechos humanos.
+                </p>
+                <p>
+                    Durante la dictadura:
+                </p>
+                <ul>
+                    <li>
+                        <span>
+                            No había democracia:
+                        </span>
+                        <p>
+                            La gente no podía votar ni elegir a sus gobernantes.
+                        </p>
+                    </li>
+                    <li>
+                        <span>
+                            Se prohibieron los derechos: 
+                        </span>
+                        <p>
+                            Muchas personas no podían expresar sus ideas libremente, y los que pensaban distinto eran perseguidos.
+                        </p>
+                    </li>
+                    <li>
+                        <span>
+                            Hubo violencia:
+                        </span>
+                        <p>
+                            Muchas personas fueron detenidas, torturadas o desaparecidas. A estas personas se las llama desaparecidos, porque no se supo más de ellas. 
+                        </p>
+                    </li>
+                    <li>
+                        <span>
+                            Censura:
+                        </span>
+                        <p>
+                            No se permitía que los medios de comunicación (como la televisión, la radio o los diarios) dieran información libremente.
+                        </p>
+                    </li>
+                </ul>
+                <span style="align-self: center;"> 24 de marzo de 1976 - el 10 de diciembre de 1983 </span>
+                
             </div>   
          </section>
 
@@ -142,26 +191,40 @@
             <div class="sitios_de_memoria-content container">
                 <h2> Sitios de Memoria </h2> 
                 <p>
-                    texto texto texto texto
+                    Los llamados Espacios de Memoria son lugares que fueron utilizados como centros 
+                    clandestinos de detención, tortura y exterminio durante la última dictadura 
+                    cívico-militar en Argentina (1976-1983). Estos espacios, donde se cometieron 
+                    crímenes de lesa humanidad, hoy han sido recuperados como lugares de homenaje, 
+                    educación y reflexión. Su objetivo es preservar la memoria de las víctimas, 
+                    denunciar lo que ocurrió y promover los derechos humanos para que nunca más se 
+                    repitan hechos tan terribles.
+                </p>
+                <p>
+                    Durante la dictadura, los militares utilizaron cientos de lugares secretos para 
+                    secuestrar, torturar y desaparecer a miles de personas. Muchos de estos sitios 
+                    funcionaban bajo la apariencia de instituciones normales, como escuelas, comisarías 
+                    o fábricas, pero en realidad eran centros de horror.
+                </p>
+                <p>
+                    En el país hay más de cuarenta de estas experiencias en las que se llevan adelante 
+                    de modo permanente actividades educativas, culturales, artísticas y de investigación 
+                    destinadas a la trasmisión de la memoria y la promoción de los derechos humanos. En
+                    el siguiente mapa se podrán visualizar la ubicación geográfica de algunos de ellos:
                 </p>
                 <div id="map" style="height: 60vh; width: 80%;" ></div>
                 <script>
-                    var map = L.map('map', { preferCanvas: true }).setView([-34.6037, -58.3816], 13);
+                    var map = L.map('map', {
+                        preferCanvas: true
+                    }).setView([-34.6037, -58.3816], 13);
 
                     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         attribution: '&copy; <a href="https://carto.com/">Carto</a>',
                         subdomains: 'abcd',
-                        maxZoom: 16, 
+                        maxZoom: 16,
                         minZoom: 3
                     }).addTo(map);
 
-                    window.addEventListener('load', function() {
-                        setTimeout(() => {
-                            console.log("Redibujando el mapa...");
-                            map.invalidateSize();
-                        }, 500);
-                    });
-
+                    // Cargar marcadores
                     fetch('sitios_de_memoria.json')
                         .then(response => response.json())
                         .then(data => {
@@ -180,13 +243,50 @@
             <div class="realidad_censurada-content container">
                 <h2> Realidad Censurada </h2> 
                 <p>
-                    texto texto texto texto
+                    Durante la dictadura cívico-militar en Argentina (1976-1983), no solo se 
+                    censuró el arte, sino también la realidad. Los militares no querían que 
+                    la gente supiera lo que realmente estaba pasando: las desapariciones, los 
+                    centros clandestinos de detención y la persecución a docentes, profesionales
+                    y estudiantes. Para ocultar la verdad, usaron mentiras, distracciones y 
+                    planes secretos, como el famoso "Plan El Basural".
                 </p>
+                <h3> Persecución a Docentes y Profesionales </h3>
+                <p>
+                    Los militares veían a los docentes, estudiantes y profesionales como una amenaza 
+                    porque creían que podían difundir ideas "peligrosas". Muchos maestros, profesores 
+                    universitarios, médicos, abogados y científicos fueron perseguidos, detenidos o 
+                    desaparecidos. Las universidades fueron intervenidas, y se prohibieron materias como 
+                    sociología y psicología, porque los militares pensaban que mal influenciaban a los jóvenes. 
+                    Esto dejó a muchas personas sin poder estudiar o trabajar libremente.
+                </p>
+                <h3> El Plan "El Basural" </h3>
                 <img src="imagenes/el_basural-img.png">
-                <span>"El basural", llamaron los militares al método que permitía que las 
-                    Fuerzas Armadas y de Seguridad secuestraran e hicieran desaparecer 
-                    personas
+                <span>"El basural, bajo este concepto se le dió luz verde a las fuerzas de seguridad
+                    para atacas cualquier problema de seguridad interna con cualquier método que considerasen
+                    apropiado, alejando al Gobierno Militar de cualquier responsabilidad."
                 </span>
+                <p>
+                    Uno de los métodos más terribles que usaron los militares fue el Plan El Basural. 
+                    Este plan consistía en secuestrar a personas y hacerlas desaparecer sin dejar 
+                    rastro. Llamaban a este método "El Basural" porque trataban a las víctimas como 
+                    si fueran basura: las sacaban de sus hogares, las llevaban a centros clandestinos 
+                    de detención (como la ESMA o El Olimpo) y luego las hacían desaparecer. 
+                </p>
+                
+                <h3> Las Distracciones: El Mundial del 78' </h3>
+                <img src="imagenes/mundial78_img.jpg">
+                <span>El fútbol como coartada de la Dictadura.
+                </span>
+                <p>
+                    Para ocultar lo que realmente estaba pasando, los militares usaron 
+                    distracciones. Una de las más grandes fue el Mundial de Fútbol de 1978. 
+                    Mientras el país celebraba el evento deportivo, los militares aprovecharon
+                    para desviar la atención de los crímenes que estaban cometiendo. La 
+                    propaganda del gobierno mostraba una Argentina feliz y unida, pero detrás 
+                    de esa fachada, miles de personas eran secuestradas, torturadas y 
+                    desaparecidas.
+                </p>
+                
             </div>   
         </section>
 
@@ -194,7 +294,20 @@
             <div  class="manifestaciones-content container">
                 <h2> Manifestaciones y Censuras Artísticas </h2> 
                 <p>
-                    texto texto texto texto            
+                    Durante la dictadura en Argentina (1976-1983), los militares no solo 
+                    controlaban el país, sino que también querían controlar el arte y la 
+                    cultura. No les gustaba nada que los artistas hablaran de libertad, 
+                    justicia o derechos humanos, así que empezaron a censurar todo: 
+                    canciones, libros, obras de teatro y hasta películas. Si una obra no 
+                    les parecía "apropiada", la prohibían. Muchos artistas, como Charly García,
+                    Mercedes Sosa y María Elena Walsh, tuvieron problemas porque sus trabajos
+                    fueron censurados. Algunos incluso tuvieron que irse del país para poder
+                    seguir creando.    
+                </b>
+                    La censura era muy estricta. Quemaban libros en plazas públicas, 
+                    cerraban teatros y no dejaban que se escucharan ciertas canciones en la 
+                    radio. "Me gusta ese tajo" de Luis Alberto Spinetta o la obra “El caso 
+                    Gaspar”, de Elsa Bornemann son ejemplos artísticos de censura.       
                 </p>
                 <ul class="manifestaciones-list">
                     <li> 
@@ -227,11 +340,41 @@
                     </li>
                     <li>
                         <div class="imagenes_manifestaciones">
+                            <img src="imagenes/elsa_manifestaciones.jpg" onclick="openLightbox(this.src)">
+                        </div>
+                        <p>
+                            Un elefante ocupa mucho espacio cuenta la historia de un elefante 
+                            que se rebela contra los dueños del circo y logra que el resto vuelva a su hábitat 
+                            natural. Fue prohibido por considerar que las referencias a la rebelión y
+                            la desobediencia eran inaceptables. 
+                        </p>
+                    </li>
+                    <li>
+                        <div class="imagenes_manifestaciones">
                             <img src="imagenes/periodistas-desaparecidos_manifestaciones.jpg" onclick="openLightbox(this.src)">
                         </div>
                         <p>
                             “Periodistas, trabajadores de prensa y gráficos desaparecidos: una lista en construcción” 
                             Pasados 43 años del golpe cívico militar, el número de víctimas llega a 228.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="imagenes_manifestaciones">
+                            <img src="imagenes/guarany_manifestaciones.jpg" onclick="openLightbox(this.src)">
+                        </div>
+                        <p>
+                            Durante el "Proceso de Reorganización Nacional", con Videla a la cabeza, 
+                            canciones como "La Guerrillera" y "Somos Prisioneros" de Horacio Guarany fueron prohibidas.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="imagenes_manifestaciones">
+                            <img src="imagenes/laultrabomba_manifestaciones.jpg" onclick="openLightbox(this.src)">
+                        </div>
+                        <p>
+                            La Ultrabomba, de Mario Lodi, es un cuento infantil que trata de un piloto de avión que 
+                            se niega a tirar una bomba sobre un pueblo porque hay niños y personas inocentes. Fue 
+                            censurado porque "atenta contra los valores de la moral, la familia y la patria". 
                         </p>
                     </li>
                 </ul>
