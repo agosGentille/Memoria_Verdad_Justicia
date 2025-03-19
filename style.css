@@ -339,14 +339,14 @@ p{
 .realidad_censurada-content h2{
     font-size: 28px;
     font-weight: 500;
+    margin-bottom: 25px;
 }
 
 .realidad_censurada-content p{
     font-size: 16px;
     font-weight: 400;
     line-height: 25px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     max-width: 92%;
 }
 
@@ -380,14 +380,15 @@ p{
 .manifestaciones-content h2{
     font-size: 28px;
     font-weight: 500;
+    margin-bottom: 25px;
 }
 
 .manifestaciones-content p{
     font-size: 16px;
     font-weight: 400;
     line-height: 25px;
-    margin-top: 20px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
+    max-width: 92%;
 }
 
 .manifestaciones-list{
@@ -475,7 +476,7 @@ p{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    max-height: auto; 
+    max-height: 20em; 
     transition: max-height 0.3s ease-in-out;
 }
 
